@@ -1,7 +1,10 @@
 <template>
   <li>
     <span v-bind:class="{done: todo.completed}">
-      <input type="checkbox" v-on:change="todo.completed = !todo.completed">
+      <input
+        type="checkbox"
+        v-on:change="todo.completed = !todo.completed"
+      >
       <b>{{index + 1}}</b>
       {{todo.title}}
     </span>
@@ -20,7 +23,7 @@
         required: true
       },
       index: Number
-    }
+    },
   }
 </script>
 

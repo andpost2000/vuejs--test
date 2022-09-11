@@ -21,14 +21,12 @@ export default {
       .then((response) => response.json())
       .then((json) => {
         this.usd = json.Cur_OfficialRate;
-        console.log(json);
         setTimeout(() => this.loading = false, 1000);
       });
     fetch('https://www.nbrb.by/api/exrates/rates/EUR?parammode=2')
       .then((response) => response.json())
       .then((json) => {
         this.eur = json.Cur_OfficialRate;
-        console.log(json);
         setTimeout(() => this.loading = false, 1000);
       });
   },
