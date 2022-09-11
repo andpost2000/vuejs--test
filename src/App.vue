@@ -1,26 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <header class="page-header">
+    <router-link to="/" class="logo"><h1>Todo app</h1></router-link>
+    <Currency />
+  </header>
+  <router-view />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Currency from '@/components/currency.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    Currency
+},
+};
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
+.page-header {
+  display: flex;
+  align-items: center
+}
+.logo {
+  width: 50%;
+  color: aqua;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.router-link-active {
+    pointer-events: none;
+    text-decoration: none;
+  }
+}
+
 </style>
